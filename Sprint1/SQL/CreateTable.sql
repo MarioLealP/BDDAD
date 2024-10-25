@@ -1,5 +1,5 @@
 CREATE TABLE Address (
-  ID          number(5) GENERATED AS IDENTITY, 
+  ID          number(5) NOT NULL, 
   Street      varchar2(255) NOT NULL, 
   PostCode    varchar2(15) NOT NULL, 
   Town        varchar2(255) NOT NULL, 
@@ -23,14 +23,14 @@ CREATE TABLE Component (
   Description varchar2(255) NOT NULL, 
   PRIMARY KEY (Code));
 CREATE TABLE Costumer (
-  ID           number(5) GENERATED AS IDENTITY, 
+  ID           number(5) NOT NULL, 
   Name         varchar2(255) NOT NULL, 
   Contact      number(10) NOT NULL, 
   AddressID    number(5) NOT NULL, 
   CostumerType varchar2(255), 
   PRIMARY KEY (ID));
 CREATE TABLE CostumerOrder (
-  ID           number(5) GENERATED AS IDENTITY, 
+  ID           number(5) NOT NULL, 
   DeliveryDate date NOT NULL, 
   OrderDate    date NOT NULL, 
   CostumerID   number(5) NOT NULL, 
@@ -43,7 +43,7 @@ CREATE TABLE Country (
   Name varchar2(255) NOT NULL, 
   PRIMARY KEY (Code));
 CREATE TABLE Operation (
-  ID   number(4) GENERATED AS IDENTITY, 
+  ID   number(4) NOT NULL, 
   Name varchar2(255) NOT NULL, 
   PRIMARY KEY (ID));
 CREATE TABLE Product (
@@ -69,7 +69,7 @@ CREATE TABLE Vatin (
   PRIMARY KEY (Vat, 
   CountryCode));
 CREATE TABLE Workstation (
-  ID                  number(5) GENERATED AS IDENTITY, 
+  ID                  number(5) NOT NULL, 
   Name                varchar2(255) NOT NULL, 
   Description         varchar2(255) NOT NULL, 
   WorkstationTypeCode varchar2(5) NOT NULL, 
